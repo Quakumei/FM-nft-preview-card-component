@@ -4,6 +4,7 @@
     box-sizing: border-box;
 }
 
+
 :root { 
     
     /* typography */
@@ -32,6 +33,16 @@
 
 }
 
+a {
+    text-decoration: none;
+}
+
+a {
+    color: var(--white-100);
+    
+    transition: color 0.3s ease-in-out;
+  }
+
 body {
     margin: 0;
     font-size: var(--fs-paragraph);
@@ -39,6 +50,7 @@ body {
     font-family: var(--family);
     height: 100vh;
     width: 100%;
+    
 
     /* To show wrongly formatted text */
     color: yellow;
@@ -46,17 +58,21 @@ body {
 }
 
 .grid-container {
-    display: grid;
+    display: flex;
+    align-items: center;
     height: 100%;
-    width:100%;
+    min-width:100%;
+    max-width: 100%;
     align-content: center;
     justify-content: space-around;
+    
 
 }
 
 .nft-card {
     background-color: var(--blue-800);
     width: 330px;
+    
     height: fit-content;
     border-radius: var(--radii);
     padding: 1.5rem;
@@ -86,16 +102,18 @@ body {
     left: 0;
     right: 0;
     background-color: var(--blue-100-overlay);
-    color: #fff;
+    color: var(--white-100);
     visibility: hidden;
     opacity: 0;
     border-radius: calc(var(--radii)/1.5);
+    transition: all .3s ease-in-out;
 }
 
 .nft-card__wrap:hover .nft-card__overlay{
     visibility: visible;
     opacity: 1;
     cursor:pointer;
+    
 }
 
 
@@ -104,11 +122,13 @@ body {
     font-size: calc(var(--fs-paragraph)*1.2);
     font-weight:var(--weight-bold);
     margin-top: 1rem;
+    transition: color 0.3s ease-in-out;
 }
 
 .nft-card__header:hover {
     cursor: pointer;
     color: var(--blue-100);
+    
 }
 
 .nft-card__description {
@@ -169,20 +189,26 @@ body {
 
 .nft-card__author-link {
     text-decoration: none;
-    color: var(--white-100);
+    color: var(--white-100);   
 }
 
-.nft-card__author-link:hover {
+.nft-card__author-link:hover{
     cursor: pointer;
     color: var(--blue-100);
 }
 
 .attribution { 
-    font-size: 11px; 
-    text-align: center; 
+    bottom: 1rem;
+    text-align: center;
+    font-size: 0.8rem;  
     color: var(--blue-300)
 }
 .attribution a { 
-    color: hsl(228, 45%, 44%); 
+    color: var(--white-100); 
+}
+
+.attribution a:hover {
+    cursor: pointer;
+    color: var(--blue-100);
 }
     
